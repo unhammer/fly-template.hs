@@ -1,0 +1,19 @@
+# fly.toml app configuration file generated for myflyapp on 2023-11-30T20:41:27+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "myflyapp"
+primary_region = "ams"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+[build]
+  image = "myapp:latest"
+
+[http_service]
+  internal_port = 8180
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0

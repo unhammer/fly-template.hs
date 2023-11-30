@@ -1,0 +1,19 @@
+* Template for fly.io docker build using Github actions
+
+1. Make an account on fly.io
+2. Download flyctl
+3. Think of an app name and enter it into =fly.toml=
+4. Initial launch of the app with =fly launch=
+   - say Yes to copying the existing configuration to the new app
+   - say No to the rest; you can always run =fly launch= again, or
+     =fly deploy= if you've built and loaded the docker image locally
+     and want to just deploy from your own machine (see comment in
+     [[file:docker.nix][docker.nix]] on how to do that)
+5. On fly.io, generate a fly access token (Account → Access Tokens)
+6. On github.com, add the fly access token to your repo's Action
+   Secrets at https://github.com/USER/PROJECT/settings/secrets/actions
+   as a /Repository secret/ with the name =FLY_API_TOKEN=
+7. Merge into the =deploy= branch and push, Github will build and
+   deploy
+8. Your app should soon be available at
+   https://myflyapp.fly.dev/index.html (or whatever name you chose)

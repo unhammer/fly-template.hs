@@ -1,0 +1,30 @@
+cabal-version:       2.4
+name:                serve
+version:             0.1.0.0
+license:             ISC
+-- ie. BSD-zero (attribution not required)
+author:              Kevin Brubeck Unhammer
+maintainer:          kevin@trigram.no
+build-type:          Simple
+
+executable serve
+  main-is:             Serve.hs
+  other-modules:
+  build-depends:       base >=4.12 && <5
+                     , wai
+                     , wai-extra
+                     , wai-app-static
+                     , warp
+                     , data-default
+  default-language:    Haskell2010
+  ghc-options:
+                     -Wall
+                     -Wcompat
+                     -Werror=missing-home-modules
+                     -Werror=incomplete-patterns
+                     -Werror=missing-fields
+                     -Wpartial-fields
+                     -Wunused-packages
+                     -fwarn-incomplete-record-updates
+                     -fwarn-incomplete-uni-patterns
+                     -fwarn-unused-imports
